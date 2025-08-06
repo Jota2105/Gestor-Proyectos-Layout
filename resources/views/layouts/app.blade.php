@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title','Dashboard') - CollabGrupitoATW</title><!-- @yield inserción donde cada vista hija -->
+    <title>@yield('title','Dashboard') - CollabGrupitoATW</title><!-- inserción donde cada vista hija -->
 
-    <!-- @yield inserción donde cada vista hija -->
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    <!--  inserción donde cada vista hija -->
 
     <!-- Enlaces a los archivos procesados por Vite: CSS, JS, assets con hash de versión, hot-reload, etc. -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -30,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('projects.index') }}">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('proyectos.index') }}">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('tasks.index') }}">Tareas</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('users.index') }}">Miembros</a></li>
                     <li class="nav-item dropdown">
@@ -44,7 +43,7 @@
                                 <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     Cerrar sesión
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
                                     @csrf
                                 </form>
                             </li>
